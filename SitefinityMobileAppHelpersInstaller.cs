@@ -49,6 +49,7 @@ namespace SitefinityMobileAppHelpers
                 // We have to register the module at a very early stage when sitefinity is initializing
                 SitefinityMobileAppHelpersInstaller.RegisterModule();
                 SitefinityMobileAppHelpersInstaller.RegisterPublishingListeners();
+                SystemManager.RegisterServiceStackPlugin(new Services.MobileContentServicePlugin());
             }
         }
 
@@ -100,7 +101,7 @@ namespace SitefinityMobileAppHelpers
   
         private async static void SendNotification(DynamicContent dynamicContentItem)
         {
-            EverliveApp app = new EverliveApp("a8iZOkae04iUCern");
+            EverliveApp app = new EverliveApp("your id here");
             
           
             var notification = new PushNotification(dynamicContentItem.GetValue("Title").ToString());
